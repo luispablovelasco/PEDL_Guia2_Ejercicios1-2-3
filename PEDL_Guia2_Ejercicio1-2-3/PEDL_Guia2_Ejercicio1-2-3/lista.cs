@@ -165,7 +165,10 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                 }
                 else
                 {
-                    Console.WriteLine("\tEsa posición no existe en la lista. Escoja otro valor");
+                    Console.WriteLine("\tEsa posición no existe en la lista. Se enviará hasta el final");
+
+                    InsertarF(item);
+
                 }
             }
         }
@@ -189,6 +192,37 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                 }
             }
             Console.WriteLine();
+        }
+
+        public void InsertarAsc(int dato)
+        {
+            nodo aux = new nodo(); //Nodo temporal 
+            aux.dato = dato;
+            aux.siguiente = null;
+
+            if (inicio == null) //Verifica si la lista está vacía
+            {
+                inicio = aux;
+            }
+            else
+            {
+
+                nodo vec; //Nodo para recorrer la lista
+                vec = inicio;
+                while (vec.siguiente != null)
+                {
+                    if (aux.dato > vec.dato)
+                    {
+                        InsertarI(dato);
+                    }
+                    if (aux.dato < vec.dato)
+                    {
+                        InsertarF(dato);
+                    }
+                }
+                vec = vec.siguiente; //Se desplaza por todos los nodos de la lista 
+            }
+
         }
     }
     //Fin de la clase lista

@@ -14,11 +14,12 @@ namespace PEDL_Guia2_Ejercicio1_2_3
             //Creamos un instancia de la clase lista para que podamos utiliza los metodos
             lista newlist = new lista();
 
-            //Le agregamos cuatro nodos a la lista
+            /*Le agregamos cuatro nodos a la lista
             newlist.InsertarI(40);
             newlist.InsertarI(30);
             newlist.InsertarI(20);
             newlist.InsertarI(10);
+            */
 
             ConsoleKeyInfo op; //Variable que capta cuando se presiona una tecla en especifico
             do
@@ -41,7 +42,8 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                 Console.WriteLine("\t-     [D] Eliminar al frente                    -");
                 Console.WriteLine("\t-     [E] Eliminar al final                     -");
                 Console.WriteLine("\t-     [F] Mostrar lista                         -");
-                Console.WriteLine("\t-     [G] Salir del programa                    -");
+                Console.WriteLine("\t-     [G] Insertar ascendentemente              -");
+                Console.WriteLine("\t-     [Esc] Salir del programa                  -");
                 Console.WriteLine("\t-                                               -");
                 Console.WriteLine("\t-------------------------------------------------");
                 Console.WriteLine("\t-------------------------------------------------");
@@ -134,10 +136,23 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                         Console.ReadKey();
                         Console.Clear();
                         break;
+
+                    case ConsoleKey.G:
+
+                        Console.WriteLine("\tInsertar de forma ascendente");
+                        Console.WriteLine("");
+                        Console.WriteLine("\tColoque el numero que quiera añadir a la lista: ");
+                        Console.Write("\t");
+                        newdata = int.Parse(Console.ReadLine());
+                        newlist.InsertarAsc(newdata);
+                        Console.WriteLine("\tAcción realizada con éxito");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
                 }
 
 
-            } while (op.Key != ConsoleKey.G);
+            } while (op.Key != ConsoleKey.Escape);
             {
                 
             }
