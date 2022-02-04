@@ -21,7 +21,6 @@ namespace PEDL_Guia2_Ejercicio1_2_3
             newlist.InsertarI(10);
 
             ConsoleKeyInfo op; //Variable que capta cuando se presiona una tecla en especifico
-
             do
             {
 
@@ -42,7 +41,7 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                 Console.WriteLine("\t-     [D] Eliminar al frente                    -");
                 Console.WriteLine("\t-     [E] Eliminar al final                     -");
                 Console.WriteLine("\t-     [F] Mostrar lista                         -");
-                Console.WriteLine("\t-     [Esc] Salir del programa                  -");
+                Console.WriteLine("\t-     [G] Salir del programa                    -");
                 Console.WriteLine("\t-                                               -");
                 Console.WriteLine("\t-------------------------------------------------");
                 Console.WriteLine("\t-------------------------------------------------");
@@ -94,13 +93,13 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                         Console.Write("\t");
                         pos = int.Parse(Console.ReadLine());
                         newlist.InsertarP(newdata, pos);
-                        Console.WriteLine("\tAcción realizada con éxito");
                         Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case ConsoleKey.D: //Caso eliminar al frente
 
+                        
                         Console.WriteLine("\tEliminar al frente");
                         Console.WriteLine("");
                         newlist.EliminarI();
@@ -138,7 +137,7 @@ namespace PEDL_Guia2_Ejercicio1_2_3
                 }
 
 
-            } while (op.Key != ConsoleKey.Escape);
+            } while (op.Key != ConsoleKey.G);
             {
                 
             }
